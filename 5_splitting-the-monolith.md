@@ -1,8 +1,6 @@
 # Splitting the Monolith
 
 ## It's all about Seams
-(cuciture)
-
 highly cohesive
 loosely coupled
 
@@ -21,7 +19,7 @@ Use an incremental approach -> it also will limit the impact of getting somethin
 
 It's best to think about where you are going to get the most benefit from some part of your code-base being separated.
 
-Consider some driver:
+## Consider some driver:
 
 ### Pace of Change
 If we split a part as a service now, we could change that service faster, as it is a separate autonomous unit.
@@ -53,6 +51,7 @@ We need to find seams in our database too so we can split them out cleanly.
 
 ### Example: Breaking Foreign Key Relationships
 BEFORE:
+```txt
 ----------|         |----------|
 | Catalog |         | Fincance |
 |----------         |-----------
@@ -60,8 +59,9 @@ BEFORE:
 ----------|               / \      -----------|
 |C. Table |______________/   \_____| F. Table |
 |----------                        |-----------
-
+```
 AFTER:
+```txt
 ----------|   api   |----------|
 | Catalog |---------| Fincance |
 |----------         |-----------
@@ -69,6 +69,7 @@ AFTER:
 ----------|         -----------|
 |C. Table |         | F. Table |
 |----------         |-----------
+```
 
 ### Example: Static Shared Data
 You can have country_code table that belongs to 3 different services

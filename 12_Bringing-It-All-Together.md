@@ -26,7 +26,7 @@
 ## When Shouldn't You Use Microservices?
 The less well you understand a domain, the harder it will be for you to find proper bounded context for your service.
 
-## Parting Words
+## Parting Words
 Learn to embrace the concept of evolutionary architecture, where your system bends and flexes and changes over time as you learn new things.
 
 Thinks _not of big-bang rewrites_, but instead _of a series of changes over time as you learn new things_.

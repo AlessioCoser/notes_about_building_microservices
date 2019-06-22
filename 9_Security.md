@@ -69,7 +69,7 @@ The server then uses its own copy of the private key and the request body to re-
 - Is a pattern, not a standard. There are many ways to implement it. (see JWT)
 - This approach ensures only that no third party has manipulated the request. The rest of the data will still be visible to parties snooping on the network.
 
-### API Keys
+### API Keys
 API keys allow a service to identify who is making a call, and place limits on what they can do.
 
 A commont approach is to use a public and private key pair. Typically, you will manage keys centrally, just as we would manage identities of people centrally.
@@ -112,7 +112,7 @@ IDS can monitor networks or hosts for suspicious behaviour, reporting problems w
 
 Unlike Firewall IDS and IPS are actively looking inside the perimeter for suspect behaviour.
 
-### Network Segregations
+### Network Segregations
 With a monolithic system, we have limits to how we can structure our networks to provide additional protections. With microservices you can put them into different networks segments to further control how services talk to each other.
 
 ### Operating System
@@ -136,7 +136,7 @@ DON'T INVENT YOUR OWN SECURITY PROTOCOLS
 
 Reinventing the weel in many cases is often just a waste of time, but when it comes to security it can be outright dangerous.
 
-## Baking Security In
+## Baking Security In
 Helping educate developers about security concerns can help reduce them in the first place.
 
 The [Open Web Application Security Project](https://www.owasp.org/index.php/Main_Page) is a good point to start.

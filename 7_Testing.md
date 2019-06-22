@@ -24,13 +24,13 @@ Uses normal pipelines for each service. Then at the end of the pipelines the end
 
 Some downsides to handle:
 
-### Flaky and Brittle Tests
+### Flaky and Brittle Tests
 
 The more moving parts, the more brittle out tests may be, and less determinstic they are. So a test that does not pass now, maybe could pass later; it's a flaky test.
 
 When we detect flaky tests, it is essential that we do our best to remove them.
 
-### Who write these test?
+### Who write these test?
 
 Avoid all teams to have granted access at adding tests without undestanding of the health of the whole suite. (explosion test cases, no real obvious ownership leads to ignoring the tests)
 
@@ -61,7 +61,7 @@ These tests should be run only against a single producer in isolation, so can be
 
 With CDC we can identify a breaking change prior to our software going into production without having to use a potentially expensive end-to-end test.
 
-### It's About Conversations
+### It's About Conversations
 CDC requires good communication and trust between the consumer and producing service.
 
 When you are consuming a service provided with a third party, you may not have the frequency of communication (or trust) to make CDC work.
@@ -100,7 +100,7 @@ Techniques to reduce the time to recovery can be as simple as very fast rollback
 
 For different organizations the trade-off between MTBF and MTTR will vary.
 
-## Cross-Functional Testing
+## Cross-Functional Testing
 They include aspects like the acceptable latency of a web page, the number of users a system should support, how accessible your UI should be to people with disabilities, and so on.
 
 ### Performance Tests

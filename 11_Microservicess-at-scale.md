@@ -9,7 +9,7 @@ We can also spend less of our time trying to stop the inevitable, and more of ou
 
 Baking in the assumption that everything can and will fail leads you to think differently about you to solve problems.
 
-## How Much is Too Much?
+## How Much is Too Much?
 Knowing how much failure you can tolerate, ow how fast your system needs to be, is driven by the users of your system.
 
 When it comes to considering if and how to scale out your system to better handle load or failure, start by trying to understand the following requirements:
@@ -25,7 +25,7 @@ The right thing to do in any situation is often not a technical decision.
 ## Architectural Safety Measures
 These are few patterns that we can make use of to ensure that if something does go wrong, it doesn't cause a nasty ripple-out effects.
 
-## The Antifragile Organization
+## The Antifragile Organization
 Some companies organize _game days_, where failure is simulated by systems being switched off and having the various teams react. For example:
 - Google has simple tests to mimic server failure, and as part of its annual DiRT (Disaster Recovery) exercises is has simulated large-scale disaster such as earthquakes.
 - Netflix has a more aggressive approach, by writing programs that cause failure and running them in production on a daily basis.
@@ -34,7 +34,7 @@ The company has to understand the importance of learning from the failure when i
 
 Things will fail. The fact that your system is now spread across multiple machines (which can and will fail) across a network (which will be unreliable) can actually make your system more vulnerable, not less.
 
-### Timeouts (page 211)
+### Timeouts (page 211)
 Timeouts are something it is easy to overlook, but in a downstream system they are important to get right.
 Put timeouts on all out-of-process calls, and pick a default timeout for everything. Log when timeouts occur, look at what happens, and change them accordingly.
 
@@ -45,7 +45,7 @@ While the circuit breaker is blown you have some options:
 - Queue up the requests and retry them later on. (specially when the work is done on an async job)
 - Fail fast and propagate error up the call chain (better when we are doing sync calls through the chain)
 
-### Bulkheads
+### Bulkheads
 Is a way to isolate yourself from failure. (Same as bulkheads of the ships that protect the rest of the ship from a leak)
 - Using different connection pools for each downstream connection.
 - Spearation of concern can also be a way to implement bulkheads. (By teasing apart functionality into separate microservices, we reduce the chance of an outage in one area affecting another.)
@@ -111,7 +111,7 @@ You need to query each individual shard and join in memory, or have and alternat
 
 Sharding for writes may not improve resiliency. (es: Cassandra handles the replication of data too)
 
-### CQRS (page. 225)
+### CQRS (page. 225)
 Command Query Responsibility Segregation pattern
 Part of the system deals with commands, which capture requests to modify state, while another part of the system deals with queries.
 Commands:
@@ -123,7 +123,7 @@ Commands:
 
 Internal models are completely separate from commands and queries.
 
-## Caching
+## Caching
 More often than not, cachingis about eliminating needless round-trips to databases or other services to serve results faster.
 
 ### Client-Side, Proxy, and Server-Side Caching
@@ -154,7 +154,7 @@ cache-control directive in response to client (as header) this tell if client sh
 
 Are standards and there are a lot of preexisting software that handles the caching for us: Reverse proxies like Squid or Varnish can sit transparently on the network between client and server. (take a look at "REST In Practice" Book: http://bit.ly/rest-practice)
 
-### Caching for Writes
+### Caching for Writes
 Write to a local cache and, at some later point, the data will be flushed to a downstream source. (write-behind cache)
 For example it is useful when a downstream service is unavailable, and we can queue up the writes and send them through when it is available again.
 

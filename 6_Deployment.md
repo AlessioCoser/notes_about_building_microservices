@@ -2,7 +2,7 @@
 
 ## Continuous Integration
 
-### Are you really doing it?
+### Are you really doing it?
 - Do you check in to mainline once per day?
 - Do you have a suite of tests to validate your changes?
 - When the build is broken, is it the #1 priority of the team to fix it?

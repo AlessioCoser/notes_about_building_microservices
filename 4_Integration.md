@@ -1,11 +1,11 @@
 # Integration
 
-## Looking for Ideal Integration Technology
+## Looking for Ideal Integration Technology
 
-### Avoid Breking Change
+### Avoid Breking Change
 If a microservice adds new fields to a piece of data it sends out, existing consumers shouldn't be impacted.
 
-### API Technology Agnostic
+### API Technology Agnostic
 Avoid integration that dictates what technology stacks we can use to implement our microservice.
 
 ### Simple for Consumer
@@ -45,14 +45,14 @@ _Choreography:_ We inform each part of the system of it's job, and let it work o
   + To add another service to be triggered from this event, you can add it as subscriber.
   + more flexible
 
-![Orchestration vs Choreography](./img/orchestration_choreography.jpg "Orchestration vs Choreography")
+<img src="./img/orchestration_choreography.jpg" width="700" />
 
 ### Implementing Async Event-Based Collaboration
 Emit and consumes Events
   -> Queues (like RabbitMQ)
   -> Atom (REST-compliant - HTTP endpoint with specification)
 
-### Complexities of Async Architectures
+### Complexities of Async Architectures
   - Use a correlation ID to trace request across process boundaries
   - Have a monitoring system
   - Dead Letter Queue (with UI to see message gailed and retry them)
@@ -62,7 +62,7 @@ Read _Enterprise Integration Patterns (Addison-Wesley)_
 ### Services as State Machines
 A microservice owns all logic associated with behaviour in ints context (Bounded Context). Our service controls all lifecycle events associated with the service's context itself.
 
-### Reactive Extensions
+### Reactive Extensions
 Is a mechanism to compose the results of multiple calls together and run operations on them.
 
 ### DRY and the perils of code reuse in a microservice world
@@ -83,10 +83,10 @@ _CONS:_
 
 **If you want a Client Library**: Separate out client to handle the underlying transport protocol, which can deal with things like service discovery and failure, from things related to the destination service itself.
 
-### Access by reference
+### Access by reference
 Not pass and object, but a reference to it (like a _resource uri_ or aws:arn)
 
-## Versioning
+## Versioning
 
 ### Defer it for as long as possible
 - Avoi making change
@@ -96,7 +96,7 @@ Not pass and object, but a reference to it (like a _resource uri_ or aws:arn)
 
 **Postel's Law**: Be conservative in what you do, be liberal in what you accept from others
 
-### Catch breaking changes early
+### Catch breaking changes early
 - Use consumer driven contracts ([see chapter 7](./7_Testing.md))
 - If you are supporting multiple different client libraries:
     - run tests using each library you support against the latest service

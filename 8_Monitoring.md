@@ -21,7 +21,7 @@ So we will need to be able to associate metadata with the metric to allow us to 
 ### Service Metrics
 Your services should expose basic metrics themselves. (like response time and error rate)
 
-### Syntetic Monitoring
+### Syntetic Monitoring
 Our monitoring system could be programmed to act a bit like our users, and could report back if something goes wrong.
 
 #### Semantic Monitoring

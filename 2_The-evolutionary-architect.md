@@ -1,12 +1,11 @@
-# The Evolutionary Architect
-
+# The Evolutionary Architect
 ## Evolutionary Vision
 You should think like a town planner: you have to try to optimize the layout of microservices infrastructure, like a city, to best suite the needs of "citiziens" users and developers operations.
 
 You do not have to say "build this specific building there", but you have to _zone_ a city.
 
-The system (the city) need to be a good place for everyone who use it. Not only users, but also developers and operations people.
-![Evolutionary Architecture](./img/evolutionary_architecture.jpg "Evolutionary Architecture")
+The system (the city) need to be a good place for everyone who use it. Not only users, but also developers and operations people. <br />
+<img src="./img/evolutionary_architecture.jpg" width="450" />
 
 ## Zoning
 Be worried about what happens between boxes and be liberal in what happens inside.
@@ -15,10 +14,10 @@ The architect must spend time coding with these teams (in pair programming)
 
 ## Approach
 
-### Strategic goals
+### Strategic goals
 If you define a company technical vision, you will need to spend more time with the non-technical parts of the organization (or the business).
 
-### Principles
+### Principles
 You have to define some principles (fewer than 10 is enough) to align what you are doing to some larger goal.
 
 At [www.12factor.net](http://www.12factor.net)) you can view an example of a set of principles which are structured around the goal of helping you create applications that work well on the Heroku platform.
@@ -30,7 +29,7 @@ You have to make a distinction between: _principles_ and _contraints_
 - _principles_: something you decide to choose
 - _contraint_: something very hard to change
 
-### Practices
+### Practices
 Our practices are how we ensure our principles are being carried out.
 
 Due to their technical nature, practices will often change more often than principles.
@@ -43,7 +42,7 @@ examples:
 ### CombiningPrinciples and Practices
 For larger organizations, where the technology and working practices may differ, you may want a different set of practices in different places, as long as they both map to a common set of principles.
 
-### The Required Standard
+### The Required Standard
 Find the balance between optimizing for autonomy of the individual microservice without loosing sight of the big picture.
 
 ### Monitoring
@@ -59,19 +58,19 @@ We need to have only one or two different style of integration.
 - pagination style
 - versioning of endpoints
 
-### Architectureal Safety
+### Architectureal Safety
 We have to ensure that our services shield themselves accordingly from unhealthy or downstream calls.
 
-## Governance Through Code
+## Governance Through Code
 
-### Exemplars
+### Exemplars
 Developer like code, code they can explore and run.
 
 You can make some exemplars, so developers can point to them.
 
 Ideally, these should be real-world services you have to get things right, rather than isolated service that are just implemented to be _perfect examples_
 
-### Tailored Service Template
+### Tailored Service Template
 A tailored service template is like a microservice which works pulling together a set of libraries to provide features like health checking,
 serving HTTP, or exposing metrics.
 
